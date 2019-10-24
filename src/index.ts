@@ -1,8 +1,2 @@
-import main from "./main";
+// import { fetchQueryResultPromise } from "./query/mysql/manager/ConnectionManager";
 
-export function test() {
-	console.log("test new module");
-	main();
-}
-
-// export default test;
