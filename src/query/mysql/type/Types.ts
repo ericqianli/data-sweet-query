@@ -2,11 +2,7 @@ import { FieldInfo } from "mysql";
 
 import { QueryType } from "../../type/Types";
 
-export type MySqlColumn = FieldInfo;
-
-// Raw MySQL query config type.
-// User customizable fields should be linked to UI control.
-// SQL field is translated from dimensional query config.
+// Query config
 
 export type SqlGetter = () => string;
 
@@ -19,14 +15,18 @@ export interface MySqlQueryConfig {
 
 export type MySqlPartialQueryConfig = Partial<MySqlQueryConfig>;
 
+// Query result
+
+export type MySqlColumn = FieldInfo;
+
 export interface MySqlQueryResult {
     type: QueryType.MYSQL;
     header?: MySqlColumn[];
     rows?: any[];
-    error?: Error;
+    error?: any;
 }
 
-// Metadata type
+// Metadata
 
 export interface MySqlMetadata {
     type: QueryType.MYSQL;

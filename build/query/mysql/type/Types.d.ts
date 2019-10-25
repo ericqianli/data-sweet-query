@@ -1,6 +1,5 @@
 import { FieldInfo } from "mysql";
 import { QueryType } from "../../type/Types";
-export declare type MySqlColumn = FieldInfo;
 export declare type SqlGetter = () => string;
 export interface MySqlQueryConfig {
     type: QueryType.MYSQL;
@@ -9,11 +8,12 @@ export interface MySqlQueryConfig {
     sqlGetter: SqlGetter;
 }
 export declare type MySqlPartialQueryConfig = Partial<MySqlQueryConfig>;
+export declare type MySqlColumn = FieldInfo;
 export interface MySqlQueryResult {
     type: QueryType.MYSQL;
     header?: MySqlColumn[];
     rows?: any[];
-    error?: Error;
+    error?: any;
 }
 export interface MySqlMetadata {
     type: QueryType.MYSQL;

@@ -50,7 +50,6 @@ function fetchQueryResultPromise(mySqlQueryConfig) {
                 case 0:
                     database = mySqlQueryConfig.database, sqlGetter = mySqlQueryConfig.sqlGetter;
                     sql = sqlGetter();
-                    console.log(sql);
                     _a.label = 1;
                 case 1:
                     _a.trys.push([1, 3, , 4]);

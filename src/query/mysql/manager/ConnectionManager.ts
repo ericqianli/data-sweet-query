@@ -9,7 +9,6 @@ export async function fetchQueryResultPromise(
 ): Promise<MySqlQueryResult> {
     const { database, sqlGetter } = mySqlQueryConfig;
     const sql = sqlGetter();
-    console.log(sql);
 
     try {
         const response = await axios.post(MYSQL_SERVER_URL, {
