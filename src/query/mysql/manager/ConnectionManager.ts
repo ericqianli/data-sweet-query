@@ -7,8 +7,7 @@ import { MySqlColumn, MySqlQueryConfig, MySqlQueryResult } from "../type/Types";
 export async function fetchQueryResultPromise(
     mySqlQueryConfig: MySqlQueryConfig
 ): Promise<MySqlQueryResult> {
-    const { database, sqlGetter } = mySqlQueryConfig;
-    const sql = sqlGetter();
+    const { database, sql } = mySqlQueryConfig;
 
     try {
         const response = await axios.post(MYSQL_SERVER_URL, {

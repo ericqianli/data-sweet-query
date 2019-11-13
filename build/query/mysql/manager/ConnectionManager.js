@@ -44,12 +44,11 @@ var Types_1 = require("../../type/Types");
 var Constant_1 = require("../constant/Constant");
 function fetchQueryResultPromise(mySqlQueryConfig) {
     return __awaiter(this, void 0, void 0, function () {
-        var database, sqlGetter, sql, response, header, rows, result, error_1;
+        var database, sql, response, header, rows, result, error_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    database = mySqlQueryConfig.database, sqlGetter = mySqlQueryConfig.sqlGetter;
-                    sql = sqlGetter();
+                    database = mySqlQueryConfig.database, sql = mySqlQueryConfig.sql;
                     _a.label = 1;
                 case 1:
                     _a.trys.push([1, 3, , 4]);

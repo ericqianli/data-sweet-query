@@ -4,13 +4,11 @@ import { QueryType } from "../../type/Types";
 
 // Query config
 
-export type SqlGetter = () => string;
-
 export interface MySqlQueryConfig {
     type: QueryType.MYSQL;
     database: string;
     table: string;
-    sqlGetter: SqlGetter;
+    sql: string;
 }
 
 export type MySqlPartialQueryConfig = Partial<MySqlQueryConfig>;

@@ -1,11 +1,10 @@
 import { FieldInfo } from "mysql";
 import { QueryType } from "../../type/Types";
-export declare type SqlGetter = () => string;
 export interface MySqlQueryConfig {
     type: QueryType.MYSQL;
     database: string;
     table: string;
-    sqlGetter: SqlGetter;
+    sql: string;
 }
 export declare type MySqlPartialQueryConfig = Partial<MySqlQueryConfig>;
 export declare type MySqlColumn = FieldInfo;
