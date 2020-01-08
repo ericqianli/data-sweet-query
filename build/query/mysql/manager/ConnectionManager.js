@@ -41,8 +41,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var axios_1 = __importDefault(require("axios"));
 var Types_1 = require("../../type/Types");
-var Constant_1 = require("../constant/Constant");
-function fetchQueryResultPromise(mySqlQueryConfig) {
+function fetchQueryResultPromise(serverUrl, mySqlQueryConfig) {
     return __awaiter(this, void 0, void 0, function () {
         var database, sql, response, header, rows, result, error_1;
         return __generator(this, function (_a) {
@@ -52,7 +51,7 @@ function fetchQueryResultPromise(mySqlQueryConfig) {
                     _a.label = 1;
                 case 1:
                     _a.trys.push([1, 3, , 4]);
-                    return [4 /*yield*/, axios_1.default.post(Constant_1.MYSQL_SERVER_URL, {
+                    return [4 /*yield*/, axios_1.default.post(serverUrl, {
                             database: database,
                             sql: sql
                         })];
