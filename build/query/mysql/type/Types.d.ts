@@ -1,6 +1,12 @@
 import { FieldInfo } from "mysql";
 import { QueryType } from "../../type/Types";
-export interface MySqlQueryConfig {
+export interface MySqlQuerySourceConfig {
+    type: QueryType.MYSQL;
+    url: string;
+    username?: string;
+    password?: string;
+}
+export interface MySqlQueryConfig extends MySqlQuerySourceConfig {
     type: QueryType.MYSQL;
     database: string;
     table: string;

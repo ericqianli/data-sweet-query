@@ -2,9 +2,19 @@ import { FieldInfo } from "mysql";
 
 import { QueryType } from "../../type/Types";
 
+// Query source
+
+export interface MySqlQuerySourceConfig {
+    type: QueryType.MYSQL;
+    url: string;
+    // TODO: Encrypt the following
+    username?: string;
+    password?: string;
+}
+
 // Query config
 
-export interface MySqlQueryConfig {
+export interface MySqlQueryConfig extends MySqlQuerySourceConfig {
     type: QueryType.MYSQL;
     database: string;
     table: string;
