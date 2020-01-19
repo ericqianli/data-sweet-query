@@ -3,6 +3,7 @@ export { QueryType } from "./query/type/Types";
 export {
     MySqlColumn,
     MySqlQueryConfig,
+    MySqlQuerySourceConfig,
     MySqlPartialQueryConfig,
     MySqlQueryResult,
     MySqlMetadata,
