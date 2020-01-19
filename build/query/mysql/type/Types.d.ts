@@ -3,6 +3,7 @@ import { QueryType } from "../../type/Types";
 export interface MySqlQuerySourceConfig {
     type: QueryType.MYSQL;
     url: string;
+    name: string;
     username?: string;
     password?: string;
 }
