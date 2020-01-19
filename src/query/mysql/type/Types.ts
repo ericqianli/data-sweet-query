@@ -17,7 +17,6 @@ export interface MySqlQuerySourceConfig {
 // Query config
 
 export interface MySqlQueryConfig {
-    type: QueryType.MYSQL;
     source: MySqlQuerySourceConfig;
     database: string;
     table: string;

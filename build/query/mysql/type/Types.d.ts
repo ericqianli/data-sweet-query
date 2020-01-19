@@ -9,7 +9,6 @@ export interface MySqlQuerySourceConfig {
     password?: string;
 }
 export interface MySqlQueryConfig {
-    type: QueryType.MYSQL;
     source: MySqlQuerySourceConfig;
     database: string;
     table: string;
