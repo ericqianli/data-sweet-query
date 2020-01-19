@@ -6,10 +6,10 @@ import { MySqlColumn, MySqlQueryConfig, MySqlQueryResult } from "../type/Types";
 export async function fetchQueryResultPromise(
     mySqlQueryConfig: MySqlQueryConfig
 ): Promise<MySqlQueryResult> {
-    const { url, database, sql } = mySqlQueryConfig;
+    const { source, database, sql } = mySqlQueryConfig;
 
     try {
-        const response = await axios.post(url, {
+        const response = await axios.post(source.url, {
             database,
             sql
         });

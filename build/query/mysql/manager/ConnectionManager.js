@@ -43,15 +43,15 @@ var axios_1 = __importDefault(require("axios"));
 var Types_1 = require("../../type/Types");
 function fetchQueryResultPromise(mySqlQueryConfig) {
     return __awaiter(this, void 0, void 0, function () {
-        var url, database, sql, response, header, rows, result, error_1;
+        var source, database, sql, response, header, rows, result, error_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    url = mySqlQueryConfig.url, database = mySqlQueryConfig.database, sql = mySqlQueryConfig.sql;
+                    source = mySqlQueryConfig.source, database = mySqlQueryConfig.database, sql = mySqlQueryConfig.sql;
                     _a.label = 1;
                 case 1:
                     _a.trys.push([1, 3, , 4]);
-                    return [4 /*yield*/, axios_1.default.post(url, {
+                    return [4 /*yield*/, axios_1.default.post(source.url, {
                             database: database,
                             sql: sql
                         })];
