@@ -7,6 +7,7 @@ import { QueryType } from "../../type/Types";
 export interface MySqlQuerySourceConfig {
     type: QueryType.MYSQL;
     url: string;
+    id: string;
     name: string;
     // TODO: Encrypt the following
     username?: string;
@@ -15,8 +16,9 @@ export interface MySqlQuerySourceConfig {
 
 // Query config
 
-export interface MySqlQueryConfig extends MySqlQuerySourceConfig {
+export interface MySqlQueryConfig {
     type: QueryType.MYSQL;
+    source: MySqlQuerySourceConfig;
     database: string;
     table: string;
     sql: string;
