@@ -1,6 +1,6 @@
 {
     "name": "data-sweet-query",
-    "version": "1.7.1",
+    "version": "1.8.0",
     "description": "Typescript based generic query module for data sweet project.",
     "main": "build/index.js",
     "types": "build/index.d.ts",

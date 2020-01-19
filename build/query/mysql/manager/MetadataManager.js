@@ -42,24 +42,27 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var axios_1 = __importDefault(require("axios"));
 var MySqlMetadataAdapter_1 = require("../adaptor/MySqlMetadataAdapter");
 var Constant_1 = require("../constant/Constant");
-function fetchMetadataPromise(serverUrl, mySqlMetadataConfig) {
+function fetchMetadataPromise(mySqlMetadataConfig) {
     return __awaiter(this, void 0, void 0, function () {
-        var response, mySqlMetadata, error_1;
+        var source, response, mySqlMetadata, error_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    _a.trys.push([0, 2, , 3]);
-                    return [4 /*yield*/, axios_1.default.post(serverUrl, {
+                    source = mySqlMetadataConfig.source;
+                    _a.label = 1;
+                case 1:
+                    _a.trys.push([1, 3, , 4]);
+                    return [4 /*yield*/, axios_1.default.post(source.url, {
                             query: Constant_1.GRAPHQL_METADATA_QUERY
                         })];
-                case 1:
+                case 2:
                     response = _a.sent();
                     mySqlMetadata = MySqlMetadataAdapter_1.adaptMySqlMetadata(response.data.data.metadata);
                     return [2 /*return*/, mySqlMetadata];
-                case 2:
+                case 3:
                     error_1 = _a.sent();
                     throw error_1;
-                case 3: return [2 /*return*/];
+                case 4: return [2 /*return*/];
             }
         });
     });

@@ -5,13 +5,12 @@ import { GRAPHQL_METADATA_QUERY } from "../constant/Constant";
 import { MySqlMetadata, MySqlMetadataConfig } from "../type/Types";
 
 export async function fetchMetadataPromise(
-    serverUrl: string,
     mySqlMetadataConfig: MySqlMetadataConfig
 ): Promise<MySqlMetadata> {
-    // const { topValueListSize, sampleValueListSize } = mySqlMetadataConfig;
+    const { source } = mySqlMetadataConfig;
 
     try {
-        const response = await axios.post(serverUrl, {
+        const response = await axios.post(source.url, {
             query: GRAPHQL_METADATA_QUERY
         });
         const mySqlMetadata = adaptMySqlMetadata(response.data.data.metadata);

@@ -6,8 +6,3 @@ exports.INITIAL_MYSQL_METADATA = {
     type: Types_1.QueryType.MYSQL,
     databaseMetadataList: []
 };
-exports.INITIAL_MYSQL_METADATA_CONFIG = {
-    type: Types_1.QueryType.MYSQL,
-    topValueListSize: 0,
-    sampleValueListSize: 0
-};

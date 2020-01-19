@@ -64,6 +64,7 @@ export type MySqlColumnType = string;
 
 export interface MySqlMetadataConfig {
     type: QueryType.MYSQL;
+    source: MySqlQuerySourceConfig;
     topValueListSize: number;
     sampleValueListSize: number;
 }
