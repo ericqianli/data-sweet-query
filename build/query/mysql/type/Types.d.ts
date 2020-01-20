@@ -2,18 +2,20 @@ import { FieldInfo } from "mysql";
 import { QueryType } from "../../type/Types";
 export interface MySqlQuerySourceConfig {
     type: QueryType.MYSQL;
-    url: string;
     id: string;
     name: string;
+    url: string;
     username?: string;
     password?: string;
 }
 export interface MySqlQueryConfig {
+    type: QueryType.MYSQL;
     source: MySqlQuerySourceConfig;
     database: string;
     table: string;
     sql: string;
 }
+export declare type QuerySourceConfig = MySqlQueryConfig;
 export declare type MySqlPartialQueryConfig = Partial<MySqlQueryConfig>;
 export declare type MySqlColumn = FieldInfo;
 export interface MySqlQueryResult {

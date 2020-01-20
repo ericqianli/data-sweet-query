@@ -2,7 +2,11 @@ import axios from "axios";
 
 import { adaptMySqlMetadata } from "../adaptor/MySqlMetadataAdapter";
 import { GRAPHQL_METADATA_QUERY } from "../constant/Constant";
-import { MySqlMetadata, MySqlMetadataConfig } from "../type/Types";
+import {
+    MySqlMetadata,
+    MySqlMetadataConfig,
+    QuerySourceConfig
+} from "../type/Types";
 
 export async function fetchMetadataPromise(
     mySqlMetadataConfig: MySqlMetadataConfig
