@@ -1,7 +1,12 @@
 import axios from "axios";
 
 import { QueryType } from "../../type/Types";
-import { MySqlColumn, MySqlQueryConfig, MySqlQueryResult } from "../type/Types";
+import {
+    MySqlColumn,
+    MySqlQueryConfig,
+    MySqlQueryConfigMap,
+    MySqlQueryResult
+} from "../type/Types";
 
 export async function fetchQueryResultPromise(
     mySqlQueryConfig: MySqlQueryConfig
@@ -26,4 +31,21 @@ export async function fetchQueryResultPromise(
     } catch (error) {
         throw error;
     }
+}
+
+export async function fetchQueryResultMapPromise(
+    mySqlQueryConfigMap: MySqlQueryConfigMap
+): Promise<{ [key: string]: MySqlQueryResult }> {
+    const responseMap: { [key: string]: MySqlQueryResult } = {};
+
+    try {
+        for (const key in mySqlQueryConfigMap) {
+            const mySqlQueryConfig = mySqlQueryConfigMap[key];
+            responseMap[key] = await fetchQueryResultPromise(mySqlQueryConfig);
+        }
+    } catch (error) {
+        throw error;
+    }
+
+    return responseMap;
 }

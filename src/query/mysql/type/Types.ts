@@ -24,6 +24,8 @@ export interface MySqlQueryConfig {
     sql: string;
 }
 
+export type MySqlQueryConfigMap = { [key: string]: MySqlQueryConfig };
+
 export type QuerySourceConfig = MySqlQueryConfig;
 
 export type MySqlPartialQueryConfig = Partial<MySqlQueryConfig>;

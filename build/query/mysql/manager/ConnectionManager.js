@@ -74,3 +74,41 @@ function fetchQueryResultPromise(mySqlQueryConfig) {
     });
 }
 exports.fetchQueryResultPromise = fetchQueryResultPromise;
+function fetchQueryResultMapPromise(mySqlQueryConfigMap) {
+    return __awaiter(this, void 0, void 0, function () {
+        var responseMap, _a, _b, _i, key, mySqlQueryConfig, _c, _d, error_2;
+        return __generator(this, function (_e) {
+            switch (_e.label) {
+                case 0:
+                    responseMap = {};
+                    _e.label = 1;
+                case 1:
+                    _e.trys.push([1, 6, , 7]);
+                    _a = [];
+                    for (_b in mySqlQueryConfigMap)
+                        _a.push(_b);
+                    _i = 0;
+                    _e.label = 2;
+                case 2:
+                    if (!(_i < _a.length)) return [3 /*break*/, 5];
+                    key = _a[_i];
+                    mySqlQueryConfig = mySqlQueryConfigMap[key];
+                    _c = responseMap;
+                    _d = key;
+                    return [4 /*yield*/, fetchQueryResultPromise(mySqlQueryConfig)];
+                case 3:
+                    _c[_d] = _e.sent();
+                    _e.label = 4;
+                case 4:
+                    _i++;
+                    return [3 /*break*/, 2];
+                case 5: return [3 /*break*/, 7];
+                case 6:
+                    error_2 = _e.sent();
+                    throw error_2;
+                case 7: return [2 /*return*/, responseMap];
+            }
+        });
+    });
+}
+exports.fetchQueryResultMapPromise = fetchQueryResultMapPromise;

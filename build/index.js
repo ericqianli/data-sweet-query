@@ -6,5 +6,6 @@ var Constant_1 = require("./query/mysql/constant/Constant");
 exports.INITIAL_MYSQL_METADATA = Constant_1.INITIAL_MYSQL_METADATA;
 var ConnectionManager_1 = require("./query/mysql/manager/ConnectionManager");
 exports.fetchQueryResultPromise = ConnectionManager_1.fetchQueryResultPromise;
+exports.fetchQueryResultMapPromise = ConnectionManager_1.fetchQueryResultMapPromise;
 var MetadataManager_1 = require("./query/mysql/manager/MetadataManager");
 exports.fetchMetadataPromise = MetadataManager_1.fetchMetadataPromise;

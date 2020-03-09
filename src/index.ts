@@ -16,6 +16,9 @@ export {
 
 export { INITIAL_MYSQL_METADATA } from "./query/mysql/constant/Constant";
 
-export { fetchQueryResultPromise } from "./query/mysql/manager/ConnectionManager";
+export {
+    fetchQueryResultPromise,
+    fetchQueryResultMapPromise
+} from "./query/mysql/manager/ConnectionManager";
 
 export { fetchMetadataPromise } from "./query/mysql/manager/MetadataManager";

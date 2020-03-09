@@ -15,6 +15,9 @@ export interface MySqlQueryConfig {
     table: string;
     sql: string;
 }
+export declare type MySqlQueryConfigMap = {
+    [key: string]: MySqlQueryConfig;
+};
 export declare type QuerySourceConfig = MySqlQueryConfig;
 export declare type MySqlPartialQueryConfig = Partial<MySqlQueryConfig>;
 export declare type MySqlColumn = FieldInfo;
